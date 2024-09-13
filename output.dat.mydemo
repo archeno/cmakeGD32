@@ -1,0 +1,8 @@
+digraph "mydemo" {
+node [
+  fontsize = "12"
+];
+    "node1" [ label = "mydemo", shape = egg ];
+    "node0" [ label = "gd32F4FirmWare", shape = octagon ];
+    "node1" -> "node0" [ style = dotted ] // mydemo -> gd32F4FirmWare
+}
