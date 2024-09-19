@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.25)
 project(gd32 VERSION 0.1.0 LANGUAGES C ASM)
-add_library(gd32F4FirmWare OBJECT )
+add_library(gd32F4FirmWare STATIC )
 
 set(Peripheral_DIR  ${CMAKE_CURRENT_SOURCE_DIR}/GD32F4xx_standard_peripheral)
 set(CMSIS_GD_DIR ${CMAKE_CURRENT_SOURCE_DIR}/CMSIS/GD/GD32F4xx)
@@ -31,5 +31,13 @@ target_compile_definitions(gd32F4FirmWare PUBLIC
     -DUSE_STDPERIPH_DRIVER
 )
 
-add_executable(mydemo main.c)
-target_link_libraries(mydemo PRIVATE gd32F4FirmWare)
+# add_executable(mydemo.elf main.c)
+# target_link_libraries(mydemo.elf PRIVATE gd32F4FirmWare )
+# set_target_properties(mydemo PROPERTIES 
+#     OUTPUT_NAME mydemo
+#     SUFFIX ".elf"
+# )
+
+# ADD_CUSTOM_COMMAND(TARGET mydemo.elf POST_BUILD 
+# COMMAND ${CMAKE_OBJCOPY} -O binary mydemo.elf mydemo.bin
+# COMMAND ${CMAKE_SIZE} mydemo.elf)

@@ -104,7 +104,7 @@ SECTIONS
     } > DATA
     __bss_end = .;
 
-    _end = .;
+    end = .;
 
     /* Stabs debugging sections.  */
     .stab          0 : { *(.stab) }

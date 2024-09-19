@@ -1,8 +1,0 @@
-digraph "gd32F4FirmWare" {
-node [
-  fontsize = "12"
-];
-    "node0" [ label = "gd32F4FirmWare", shape = octagon ];
-    "node1" [ label = "mydemo", shape = egg ];
-    "node1" -> "node0" [ style = dotted ] // mydemo -> gd32F4FirmWare
-}
